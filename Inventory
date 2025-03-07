@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Inventory {
+
+    public static void main(String[] args) {
+        // Declare an ArrayList for storing the book inventory
+        List<Book> inventory = new ArrayList<>();
+
+        // Add the 3 books to the inventory (hardcoded values)
+        inventory.add(new Book("Java Programming", 59.99));
+        inventory.add(new Book("Data Structures", 79.50));
+        inventory.add(new Book("Software Engineering", 99.95));
+
+        // Display the report header
+        System.out.println("Inventory Report");
+        System.out.println("----------------");
+
+        // Initialize total inventory value
+        double totalValue = 0;
+
+        // Use an enhanced for loop to display inventory and total value
+        for (Book book : inventory) {
+            System.out.println(book);
+            totalValue += book.getPrice();
+        }
+
+        // Display the total inventory value with proper formatting
+        System.out.printf("%nTotal Inventory Value: $%,10.2f%n", totalValue);
+    }
+}
